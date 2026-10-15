@@ -1,0 +1,144 @@
+#api call for create user register
+###
+POST http://127.0.0.1:8000/v1/spending/register/
+Content-Type: application/json
+
+{
+
+    "username":"react",
+    "email":"react@email.com",
+    "password":"react"
+}
+
+
+
+
+
+
+#API call for token................
+###
+POST http://127.0.0.1:8000/v1/spending/token/
+Content-Type: application/json
+
+{
+
+    "username":"django",
+    "password":"django"
+}
+
+
+
+
+
+#api call for list user register
+###
+GET http://127.0.0.1:8000/v1/spending/getme/
+Accept: application/json
+Authorization: Basic react:react
+
+
+
+
+
+
+
+#.............................................................
+#API call for listing all expenses
+###
+GET http://127.0.0.1:8000/v1/spending/expenses/
+Accept: application/json
+#Authorization: Basic react:react
+Authorization: Token d4105c8d0363393129329bd3aba7d6afb4536085
+
+
+
+
+
+
+
+
+
+#API call for create expenses
+###
+POST http://127.0.0.1:8000/v1/spending/expenses/
+Content-Type: application/json
+Authorization: Token d4105c8d0363393129329bd3aba7d6afb4536085
+
+
+{
+    "title":"lap",
+    "amount":500,
+    "category":"BILLS",
+    "payment_method":"upi"
+
+}
+
+
+#......................................................................
+
+
+
+
+
+
+
+
+#API call for retriving expenses
+###
+GET http://127.0.0.1:8000/v1/spending/expenses/4/
+Accept: application/json
+Authorization: Token d4105c8d0363393129329bd3aba7d6afb4536085
+
+
+
+
+
+
+
+
+#API call for updating expenses
+###
+PUT http://127.0.0.1:8000/v1/spending/expenses/17/
+Content-Type: application/json
+#Authorization: Basic django:django
+Authorization: Token d4105c8d0363393129329bd3aba7d6afb4536085
+
+{
+  "id": 17,
+  "title": "lap",
+  "amount": "50000.00",
+  "category": "BILLS",
+  "priority": "need",
+  "payment_method": "upi",
+  "created_at": "2026-10-14T06:28:11.823294Z",
+  "updated_at": "2026-10-14T06:28:11.823332Z",
+  "owner": 1
+}
+
+
+
+
+
+#API call for deleting expenses
+###
+DELETE http://127.0.0.1:8000/v1/spending/expenses/3/
+Accept: application/json
+#Authorization: Basic django:django
+Authorization: Token d4105c8d0363393129329bd3aba7d6afb4536085
+
+
+#api call for today expense summary
+###
+GET http://127.0.0.1:8000/v1/spending/expenses/summary/
+Accept: application/json
+#Authorization: Basic django:django
+Authorization: Token d4105c8d0363393129329bd3aba7d6afb4536085
+
+
+#API call for budgetpaln
+###
+GET http://127.0.0.1:8000/v1/spending/budget/plan/
+Accept: application/json
+#Authorization: Basic django:django
+Authorization: Token d4105c8d0363393129329bd3aba7d6afb4536085
+
